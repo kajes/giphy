@@ -1,0 +1,8 @@
+{
+  "name": "giphy",
+  "description": "",
+  "author": "Lars Kajes <lars@kajes.se>",
+  "private": true,
+  "scripts": {
+  },
+}
