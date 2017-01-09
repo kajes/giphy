@@ -3,14 +3,14 @@
   "description": "",
   "author": "Lars Kajes <lars@kajes.se>",
   "private": true,
-  "scripts": {
-    
-  },
-  "dependencies": {
-    "query-string": "^4.2.3"
-  },
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/kajes/giphy.git",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+
+  },
+  "dependencies": {
+    "query-string": "^4.2.3"
+  }
 }
