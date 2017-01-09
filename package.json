@@ -3,6 +3,13 @@
   "description": "",
   "author": "Lars Kajes <lars@kajes.se>",
   "private": true,
-  "scripts": {
+  "scripts": {},
+  "dependencies": {
+    "query-string": "^4.2.3",
+    "yarn": "^0.18.1"
   },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kajes/giphy.git",
+  "license": "MIT"
 }
