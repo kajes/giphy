@@ -1,6 +1,5 @@
 {
   "name": "giphy",
-  "description": "",
   "author": "Lars Kajes <lars@kajes.se>",
   "private": true,
   "version": "1.0.0",
@@ -8,9 +7,13 @@
   "repository": "https://github.com/kajes/giphy.git",
   "license": "MIT",
   "scripts": {
-
+    "build:styles": "node-sass --source-map true --output-style compressed src/styles/giphy.scss public/styles/main.css",
+    "watch:styles": "node-sass --watch src/styles/giphy.scss public/styles/main.css"
   },
   "dependencies": {
     "query-string": "^4.2.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.3.0"
   }
 }
