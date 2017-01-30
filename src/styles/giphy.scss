@@ -20,11 +20,14 @@ header {
   display: flex;
   flex-basis: 100%;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-bottom: 5vh;
+  margin-top: 10vh;
 
   img {
     height: 100%;
-    width: 75%;
+    width: 75vw;
+    max-width: 60rem;
+    min-width: 25rem;
   }
 
 }
@@ -36,10 +39,9 @@ main {
 
   form {
     padding: 0;
-    margin: 0;
+    margin: 0 2rem;
     height: 3em;
     display: flex;
-    min-width: 22em;
     max-width: 33em;
     flex-grow: 1;
     border: .2em solid #E181CE;
