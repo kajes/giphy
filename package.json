@@ -7,7 +7,7 @@
   "repository": "https://github.com/kajes/giphy.git",
   "license": "MIT",
   "scripts": {
-    "browser": "browser-sync start --server ./public/ --files public/**/*",
+    "browser": "browser-sync start --server ./public/ --files public/**/* --browser firefox_dev",
     "build:scripts": "rollup --config",
     "build:styles": "node-sass --source-map true --output-style compressed src/styles/giphy.scss public/styles/main.css",
     "watch:scripts": "rollup --config --watch",
