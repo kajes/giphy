@@ -7,6 +7,7 @@
  * file that was distributed with this source code.
  */
 
+import queryString from 'query-string';
 let LOADED = false;
 
 /**
@@ -23,6 +24,18 @@ function bootstrap () {
   LOADED = true;
 
   console.log('The Giphy application has been loaded.');
+
+  // API variables
+  const api = 'http://api.giphy.com/';
+  const key = 'dc6zaTOxFJmzC';
+
+  // Element variables
+  const searchInput = document.querySelector('.search__input');
+
+  // Event listeners
+  searchInput.addEventListener('input', function(event){
+    console.log(searchInput.value);
+  });
 
   // When the application is loaded we remove the event listeners.
   document.removeEventListener('DOMContentLoaded', bootstrap);
