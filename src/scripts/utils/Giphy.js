@@ -10,7 +10,17 @@ export default class Giphy {
 
     const searchUrl = `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${GIPHY_API_KEY}`;
 
-    const promise = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
+
+      let image = new Image();
+
+      image.addEventListener('load', event => {
+        resolve(image);
+      });
+
+      image.addEventListener('error', event => {
+        reject(new Error(`Failed to load image from source: ${query}`));
+      });
 
     });
 
