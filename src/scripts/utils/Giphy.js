@@ -3,26 +3,23 @@ import { GIPHY_API_KEY } from '../config';
 
 export default class Giphy {
 
-  search(query)
+  search(q)
   {
 
-    query = queryString.stringify(query);
+    const query = queryString.stringify({q});
 
-    const searchUrl = `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${GIPHY_API_KEY}`;
+    const searchUrl = `http://api.giphy.com/v1/gifs/search?${query}&api_key=${GIPHY_API_KEY}`;
 
-    return new Promise((resolve, reject) => {
+    fetch(searchUrl).then((response) => {
+      if (response.status != 200) {
+        return new Error(`Search URL failed to respond correctly: ${query}`);
+      }
 
-      let image = new Image();
 
-      image.addEventListener('load', event => {
-        resolve(image);
-      });
 
-      image.addEventListener('error', event => {
-        reject(new Error(`Failed to load image from source: ${query}`));
-      });
+    }
 
-    });
+    );
 
   }
 
