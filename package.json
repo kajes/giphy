@@ -8,8 +8,10 @@
   "license": "MIT",
   "scripts": {
     "browser": "browser-sync start --server ./public/ --files public/**/* --browser firefox",
+    "build:html": "pug --hierarchy -o ./public/ ./src/",
     "build:scripts": "rollup --config --environment NODE_ENV:production",
     "build:styles": "node-sass --source-map true --output-style compressed src/styles/giphy.scss public/styles/main.css",
+    "watch:html": "pug --hierarchy -o ./public/ -w -P ./src/",
     "watch:scripts": "rollup --config --watch",
     "watch:styles": "node-sass --watch --source-map true src/styles/giphy.scss public/styles/main.css",
     "watch": "npm-run-all --parallel browser watch:*",
@@ -25,6 +27,7 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
     "node-sass": "^4.3.0",
+    "pug-cli": "^1.0.0-alpha6",
     "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^7.0.0",
