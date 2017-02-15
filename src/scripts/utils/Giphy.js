@@ -11,10 +11,28 @@ export default class Giphy {
     const searchUrl = `http://api.giphy.com/v1/gifs/search?${query}&api_key=${GIPHY_API_KEY}`;
 
     fetch(searchUrl).then((response) => {
+
       if (response.status != 200) {
-        return new Error(`Search URL failed to respond correctly: ${query}`);
+        return new Error(`Search URL failed to respond correctly: ${searchUrl}`);
       }
 
+      response.json().then((data) => {
+
+        return new Promise((resolve, reject) => {
+
+          let giphyResponse = new Image();
+
+          giphyResponse.addEventListener('load', event => {
+            resolve(giphyResponse);
+          });
+
+          giphyResponse.addEventListener('error', event => {
+            reject(new Error(`No GIFs found: ${q}`));
+          });
+
+        });
+
+      });
 
 
     }

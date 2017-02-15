@@ -10,6 +10,9 @@ export default class App {
   onSubmit()
   {
     const query = document.querySelector('.search__input').value;
-    return this.giphy.search(query);
+    const promise = this.giphy.search(query)
+      .then((resolve) => {
+
+      })
   }
 }
