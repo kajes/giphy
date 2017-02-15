@@ -25,14 +25,19 @@ function bootstrap () {
 
   console.log('The Giphy application has been loaded.');
 
-  const searchField = document.querySelector('.search');
+  const searchForm = document.querySelector('.search');
 
-  window.app = new App(searchField);
+  window.app = new App(searchForm);
 
-  searchField.addEventListener('submit', function(event){
+  searchForm.addEventListener('submit', function(event){
+
     event.preventDefault();
-    console.log(window.app.onSubmit());
-  })
+
+    const responseData = window.app.onSubmit();
+
+    console.log(responseData);
+
+  });
 
   // When the application is loaded we remove the event listeners.
   document.removeEventListener('DOMContentLoaded', bootstrap);
