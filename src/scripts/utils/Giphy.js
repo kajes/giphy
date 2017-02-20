@@ -1,13 +1,20 @@
+import queryString from 'query-string';
+import { GIPHY_API_KEY } from '../config';
+
 export default class Giphy {
 
-  search(url)
+  search(query)
   {
 
-    return fetch(url)
-      .then(response => response.json()
-      .then(post => post.data),
-      error => console.error(error))
-      .catch(error => console.error(error))
+    const search = queryString.stringify({
+      q: query,
+      api-key: GIPHY_API_KEY
+    });
+
+    const url = 'http://api.giphy.com/v1/';
+
+    fetch(url)
+      return .then(response => response.json());
 
   }
 

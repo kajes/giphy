@@ -1,23 +1,28 @@
 import Giphy from './utils/Giphy';
-import queryString from 'query-string';
-import { GIPHY_API_KEY } from './config';
 
 export default class App {
 
-  constructor(searchForm)
+  constructor()
   {
     this.giphy = new Giphy();
-    this.searchForm = searchForm;
+    const form = document.forms.search;
+    this.field = this.form.querySelector('input');
+    this.form.addEventListener('submit', this.onSubmit.bind(this));
   }
 
-  onSubmit()
+  onSubmit(event)
   {
 
-    const query = queryString.stringify({q: this.searchForm.firstElementChild.value});
+    event.preventDefault(event);
+    this.giphy.search(this.field.value)
+      .then(response => {
+        for (let i = 0; i < response.data.length; i++) {
+          const item = response.data[i]
 
-    const url = `http://api.giphy.com/v1/gifs/search?${query}&api_key=${GIPHY_API_KEY}`;
 
-    return this.giphy.search(url);
+        }
+
+      })
 
   }
 }
