@@ -7,7 +7,7 @@
   "repository": "https://github.com/kajes/giphy.git",
   "license": "MIT",
   "scripts": {
-    "browser": "browser-sync start --server ./public/ --files public/**/*",
+    "browser": "browser-sync start --proxy giphy.localhost.dev --files public/**/*",
     "build:html": "pug ./src/index.pug -o ./public/",
     "build:img": "imagemin ./src/images/* -o ./public/assets/images/",
     "build:scripts": "rollup --config --environment NODE_ENV:production",

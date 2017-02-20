@@ -35,42 +35,60 @@ header {
 main {
   flex-basis: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 
-  form {
+  & form {
+    flex-basis: 100%;
     padding: 0;
-    margin: 0 2rem;
+    margin: 2rem 2rem;
     height: 3em;
     display: flex;
     max-width: 33em;
     flex-grow: 1;
     border: .2em solid #E181CE;
-  }
 
-  input, button {
-    margin: 0;
-    padding: 0;
-  }
+    & input, & button {
+      margin: 0;
+      padding: 0;
+    }
 
-  input {
-    flex-grow: 1;
-    flex-shrink: 1;
-    border: none;
-  }
+    & input {
+      flex-grow: 1;
+      flex-shrink: 1;
+      border: none;
+    }
 
-  button {
-    flex-grow: 0;
-    flex-shrink: 1;
-    border: none;
-    cursor: pointer;
-    width: 34px;
-    align-self: center;
-
-    img {
-      display: block;
-      height: 34px;
+    & button {
+      flex-grow: 0;
+      flex-shrink: 1;
+      border: none;
+      cursor: pointer;
       width: 34px;
+      align-self: center;
+
+      & img {
+        display: block;
+        height: 34px;
+        width: 34px;
+      }
     }
   }
+
+  & div.gallery {
+    margin: 2rem 4rem;
+    flex-basis: 100%;
+
+    & img {
+      max-height: 14rem;
+      margin: 2rem;
+    }
+  }
+
+  & p {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
 
 }
